@@ -10,8 +10,9 @@
 
 
 <style>
-.hues{
-    animation: huec 5s infinite linear alternate;
+.hue{
+    animation: huec 32s infinite linear alternate;
+    animation-delay: 5s;
 }
 
 @keyframes huec {
