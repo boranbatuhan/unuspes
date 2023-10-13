@@ -1,5 +1,5 @@
 <template>
-<div id="beadcontainer" class="h-fit w-full">
+<div id="beadcontainer" class="h-fit w-full my-2">
     <div class="line1 flex w-full items-center justify-center relative">
         <div class="h-px w-full bg-gradient-to-r from-transparent via-black/40 to-transparent absolute"></div>
         <div class="bead bead-orange" style="--i:1"></div>

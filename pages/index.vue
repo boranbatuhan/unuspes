@@ -3,15 +3,20 @@
 
 
 <template>
-    <div class="container overflow-x-hidden flex items-center justify-start flex-col mx-auto border border-black min-h-screen py-2">
+    <div class="container overflow-x-hidden flex items-center justify-start flex-col mx-auto  min-h-screen py-2">
         <beadheader class="hue"/>
+        <my-button-pop :currency="'₺'" :price="'250'" />
     </div>
 </template>
 
 
 <style>
+
+
+
+
 .hue{
-    animation: huec 32s infinite linear alternate;
+    animation: huec 60s infinite linear alternate;
     animation-delay: 5s;
 }
 

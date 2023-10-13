@@ -6,7 +6,7 @@ export default defineNuxtConfig({
     head:{
     title:"Unuspes | Handmade, Beadworks.",
     meta:[{name:'description',content:'Unuspes, handmade illustrated bead accessories, bracelets, necklaces, paintings, special order and designs.'}],
-    link:[{rel:'icon' , type: 'image/png', href:'_nuxt/assets/images/unospes.png'}]
+    link:[{rel:'icon' , type: 'image/png', href:'_nuxt/assets/images/unuspes.png'}]
   }
   }
 
