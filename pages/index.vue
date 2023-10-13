@@ -5,7 +5,7 @@
 <template>
     <div class="container overflow-x-hidden flex items-center justify-start flex-col mx-auto  min-h-screen py-2">
         <beadheader class="hue"/>
-        <my-button-pop :currency="'₺'" :price="'250'" />
+        <my-button-pop  :price="'250'" />
     </div>
 </template>
 

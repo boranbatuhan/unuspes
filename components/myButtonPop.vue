@@ -7,7 +7,10 @@
 
 <script setup>
 const props= defineProps({
-  currency:String,
+  currency:{
+    type:String,
+    default:'₺'
+  },
   price:String
 })
 </script>
@@ -19,7 +22,7 @@ const props= defineProps({
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline;
-  border-bottom: 4px solid  ;
+  border-bottom: 2px solid  ;
   border-image: linear-gradient(0.25turn, #535EFC, #0EC8EE, #0EC8EE);
   border-image-slice: 1;
 
@@ -31,10 +34,7 @@ const props= defineProps({
 .button {
   position: relative;
   color: #fff;
-  font-weight: 00;
   cursor: pointer;
-  font-size: 1.5em;
-  font-weight: 600;
   background-image: linear-gradient(0.25turn, #fff, #fff, #fff);
   transition: all 0.2s ease;
 
