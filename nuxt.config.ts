@@ -2,6 +2,9 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules:['@vueuse/nuxt', "@nuxtjs/tailwindcss"],
+  tailwindcss: {
+    exposeConfig: true,
+  },
   app:{
     head:{
     title:"Unuspes | Handmade, Beadworks.",

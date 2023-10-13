@@ -2,7 +2,12 @@
 module.exports = {
   content: [],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily:{
+        gerhaus:["gerhaus"],
+        now:["now"]
+      }
+    },
   },
   plugins: [],
 }

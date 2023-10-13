@@ -1,5 +1,5 @@
 <template>
-  <nuxt-layout>
+  <nuxt-layout class="font-now">
    <nuxt-page></nuxt-page>
 
   </nuxt-layout>
