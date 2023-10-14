@@ -286,7 +286,7 @@
 <style>
 
 .bead-black{
-    background-image: linear-gradient(180deg, #ffffff 0%, #2b2225 2%, #110a08 98%, #000000 100%);
+    background-image: linear-gradient(180deg, #ffffff 0%, #323241 2%, #151224 98%, #000000 100%);
 
 }
 .bead-white{
@@ -294,7 +294,7 @@
 
 }
 .bead-turquoise{
-    background-image: linear-gradient(180deg, #ffffff 0%, #15d2ff 2%, #01a7d1 98%, #000000 100%);
+    background-image: linear-gradient(180deg, #ffffff 0%, #00e1ff 2%, #0059ff 98%, #000000 100%);
 
 }
 
