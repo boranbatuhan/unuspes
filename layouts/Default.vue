@@ -5,7 +5,7 @@
 
 <template>
   <my-header/>
-    <div class="container  overflow-x-hidden flex items-center justify-start flex-col mx-auto gap-7 min-h-screen p-2">
+    <div class="container font-now  overflow-x-hidden flex items-center justify-start flex-col mx-auto gap-7 min-h-screen p-2">
         <beadheader class="hues"/>
 
         <!-- shopnow button start -->
@@ -185,6 +185,7 @@
         <!-- main section end -->
 
 
+        <my-footer class="graborder w-full h-32 rounded-lg p-4" style="--turn:0.5"/>
     </div>
 </template>
 
