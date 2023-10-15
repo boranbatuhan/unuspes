@@ -1,10 +1,13 @@
 <script setup>
+import { useMouse } from '@vueuse/core'
 
+const { x, y } = useMouse()
 </script>
 
 
 <template>
   <my-header/>
+
     <div class="container font-now  overflow-x-hidden flex items-center justify-start flex-col mx-auto gap-7 min-h-screen p-2">
         <beadheader class="hues"/>
 

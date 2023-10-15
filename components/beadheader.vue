@@ -1,5 +1,5 @@
 <template>
-<div id="beadcontainer" class="h-fit w-full my-2">
+<div :class="{'pointer-events-none':isAnim,'pointer-events-auto':!isAnim}" @click="reverseAnimation" id="beadcontainer" class="h-fit w-full my-2 cursor-pointer">
     <div class="line1 flex w-full items-center justify-center relative">
         <div class="h-px w-full bg-gradient-to-r from-transparent via-black/40 to-transparent absolute"></div>
         <div class="bead bead-turquoise" style="--i:1"></div>
@@ -279,7 +279,37 @@
 </template>
 
 <script setup>
+const isAnim = ref(true)
 
+setTimeout(() => {
+    isAnim.value=false
+}, 4000);
+
+
+const reverseAnimation = () => {
+  const beads = document.querySelectorAll('.bead');
+
+  beads.forEach((bead, index) => {
+    isAnim.value=true
+setTimeout(() => {
+    isAnim.value=false
+}, 9000);
+    bead.style.animation = 'none';
+    bead.offsetHeight; 
+    bead.style.animation = null; 
+    bead.style.animationDirection = 'reverse';
+    bead.style.animationDelay = `calc(var(--i) * 100ms)`;
+    setTimeout(() => {
+        bead.style.animation = 'none';
+        bead.offsetHeight; 
+        bead.style.animation = null; 
+        bead.style.animationDirection = 'alternate';
+        bead.style.animationDelay = `calc(var(--i) * 100ms)`;
+    }, 3500);
+
+});
+
+};
 
 </script>
 
@@ -305,7 +335,7 @@
     margin: 1px;
     filter: drop-shadow(1px 1px 2px black);
     user-select: none;
-    animation: slide-top 0.5s ease-in-out forwards   ;
+    animation: slide-top 0.5s ease-in-out both   ;
     animation-delay: calc(var(--i) * 100ms);
     transform: translateX(calc( 100vw + 100px));
     flex-shrink: 0;
