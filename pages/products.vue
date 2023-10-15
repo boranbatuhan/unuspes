@@ -1,6 +1,7 @@
 <template>
     <div class="min-h-screen">
-aaaaaaaaa
+
+ürünlersss
     </div>
 </template>
 
@@ -8,6 +9,6 @@ aaaaaaaaa
 
 </script>
 
-<style lang="scss" scoped>
+<style  scoped>
 
 </style>

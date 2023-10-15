@@ -4,3 +4,8 @@
 
   </nuxt-layout>
 </template>
+<style>
+*{
+  scroll-behavior: smooth;
+}
+</style>
