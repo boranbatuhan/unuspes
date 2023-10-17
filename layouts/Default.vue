@@ -195,12 +195,7 @@ const { x, y } = useMouse()
 
 <style>
 
-.graborder{
-  background:
-  linear-gradient(calc(var(--turn) * 1turn), #ffffff, #fdfdfd, #fdfdfd) padding-box,
-  linear-gradient(calc(var(--turn) * 1turn), #535EFC, #0EC8EE, #0EC8EE) border-box;
-  border: 2px solid transparent;
-}
+
 
 .hue{
     animation: huec 60s infinite linear alternate;

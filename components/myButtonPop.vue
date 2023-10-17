@@ -1,6 +1,7 @@
 <template>
-    <button class="button rounded-full py-2 px-4 z-50 active:scale-95 hover:scale-105">
-        <p id="ui" >{{props.currency}}{{props.price}}</p>
+    <button class="button rounded-full min-w-[5rem] py-2 px-4 z-50 active:scale-95 hover:scale-105">
+        <p id="ui">{{props.currency}}{{props.price}}</p>
+        <p id="uibuy">Buy</p>
     </button>
 
 </template>
@@ -11,7 +12,10 @@ const props= defineProps({
     type:String,
     default:'₺'
   },
-  price:String
+  price:{
+    type:String,
+    default:"100"
+  }
 })
 </script>
 
@@ -27,8 +31,17 @@ const props= defineProps({
   border-image-slice: 1;
 
 }
-.button:hover #ui::after{
+/* .button:hover #ui::after{
     content: " | Buy";
+} */
+#uibuy{
+    display: none;
+}
+.button:hover #ui{
+    display: none;
+}
+.button:hover #uibuy{
+    display: inline;
 }
 
 .button {

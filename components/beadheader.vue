@@ -291,9 +291,9 @@ const reverseAnimation = () => {
 
   beads.forEach((bead, index) => {
     isAnim.value=true
-setTimeout(() => {
-    isAnim.value=false
-}, 9000);
+    setTimeout(() => {
+        isAnim.value=false
+    }, 9000);
     bead.style.animation = 'none';
     bead.offsetHeight; 
     bead.style.animation = null; 
@@ -339,6 +339,7 @@ setTimeout(() => {
     animation-delay: calc(var(--i) * 100ms);
     transform: translateX(calc( 100vw + 100px));
     flex-shrink: 0;
+
 }
 .bead::before{
     content: "";
