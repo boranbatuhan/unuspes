@@ -1,16 +1,12 @@
 <template>
-    <div class="min-h-screen flex items-center justify-center ">
-        <myCard/>
+    <div class="min-h-screen flex items-center justify-center bg-stone-50">
+
     </div>
 </template>
 
 <script setup>
-const {x,y} = useMouse()
 
 definePageMeta({
     layout:'Admin'
 })
 </script>
-<style >
-
-</style>

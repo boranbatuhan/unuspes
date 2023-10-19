@@ -17,3 +17,39 @@
     linear-gradient(calc(var(--turn) * 1turn), #535EFC, #0EC8EE, #0EC8EE) border-box;
     border: 2px solid transparent;
   }
+
+  
+@property --angle {
+    inherits: true;
+    initial-value: 0deg;
+    syntax: '<angle>';
+  }
+  
+  
+  
+.graborder-anim {
+  background:
+  linear-gradient( #fff, #fff, #fff) padding-box,
+  conic-gradient(from calc( var(--angle) + 0deg ) at 50% 50%, #0EC8EE 0%, #00FFE0FF 34%, #535EFC 51%, #535EFC 62%, #0EC8EE 94%) border-box;
+  border: 2px solid transparent;
+  position: relative;
+  transform: translate3d(0, 0, 0);
+  transition: background 0.2s;
+  animation: rotate-gradient 1.5s infinite linear;
+  animation-play-state: paused;
+}
+
+
+@keyframes rotate-gradient {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
+.graborder-anim:hover {
+  animation-play-state: running;
+}
+  
+  

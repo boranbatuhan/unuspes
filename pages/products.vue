@@ -8,18 +8,13 @@
             <li @click="filter='popi'" :class="{'font-bold underline':filter=='popi'}" class="hover:underline cursor-pointer">Popüler</li>
         </ul>
         <div class="container mx-auto  p-2 flex items-start justify-center flex-wrap gap-7">
-            <my-card v-for="p in products" :p="p" :key="p.id"/>
+            <my-card v-for="i in 5" :key="i"/>
         </div>
     </div>
 </template>
 
 <script setup>
-import axios from "axios"
 const filter=ref("")
-const products= ref(null)
-axios.get("https://fakestoreapi.com/products").then((res)=>{
-    products.value=res.data
-})
 
 
 </script>

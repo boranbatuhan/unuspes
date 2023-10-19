@@ -12,7 +12,7 @@ const { x, y } = useMouse()
         <beadheader class="hues"/>
 
         <!-- shopnow button start -->
-            <my-button :name="'Shop Now'" class="saturate-100 hover:saturate-150 hover:scale-105 scale-100 active:scale-100 transition-all"/>
+            <my-button-shop :name="'Shop Now'" class="saturate-100 hover:saturate-150 hover:scale-105 scale-100 active:scale-100 transition-all"/>
         <!-- shopnow button end -->
 
 
@@ -34,6 +34,9 @@ const { x, y } = useMouse()
                                 </li>
                                 <li class="hover:underline cursor-pointer underline-offset-2">
                                     <nuxt-link to="/products">Tüm Ürünler</nuxt-link>
+                                </li>
+                                <li class="hover:underline cursor-pointer underline-offset-2">
+                                    <nuxt-link to="/design">Tasarım Aracı</nuxt-link>
                                 </li>
                                 <li class="hover:underline cursor-pointer underline-offset-2">Seriler</li>
                                 <li class="hover:underline cursor-pointer underline-offset-2">Kargo</li>
@@ -117,8 +120,8 @@ const { x, y } = useMouse()
                                 <input type="password" id="password" class="w-full transition-all outline-none graborder rounded-lg p-1 focus:!border-2 !border" autocomplete="off" spellcheck="off">
                             </label>
                         </li>
-                        <li class="cursor-pointer p-2">
-                            <button class="text-center w-full bg-gradient-to-t from-sky-400 via-sky-600 hover:to-cyan-400 hover:from-cyan-400 hover:via-cyan-600 to-sky-400 py-2 rounded-lg transition-all border-2 border-purple-500/50 font-bold scale-100 hover:scale-105 active:scale-100 text-white">Giriş Yap</button>
+                        <li class="p-2">
+                            <my-button name="Giriş Yap" />
                         </li>
                         <li class="cursor-pointer text-xs group text-sky-600">
                             <button class="group-hover:underline ">Şifremi unuttum</button>
@@ -161,10 +164,10 @@ const { x, y } = useMouse()
                     <p class="text-2xl font-bold pl-6 ">Tasarım Aracı</p>
                     <div class="h-px w-full bg-gradient-to-r from-transparent my-2 via-purple-600 to-transparent"></div>
                     <ul class="px-2">
-                        <li class="cursor-pointer p-2">
-                            <button class="text-center w-full bg-gradient-to-t from-sky-400 via-sky-600 hover:to-cyan-400 hover:from-cyan-400 hover:via-cyan-600 to-sky-400 py-2 rounded-lg transition-all border-2 border-purple-500/50 font-bold scale-100 hover:scale-105 active:scale-100 text-white">
-                                Tasarımı Başlat
-                            </button>
+                        <li class=" p-2">
+                            <nuxt-link to="/design">
+                                <my-button name="Tasarımı Başlat" />
+                            </nuxt-link>
                         </li>
                     </ul>
                 </div>
