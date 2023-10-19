@@ -22,7 +22,7 @@
 </template>
 
 <script setup>
-const selectedColor = ref("#0CD4E4")
+const selectedColor = ref("#141414")
 const props = defineProps({
     selectColor:Function
 })
