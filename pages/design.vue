@@ -34,6 +34,7 @@ onMounted(()=>{
        }
      }
 }
+bgDraw()
     // Renk seçici olayı
     ctx.fillStyle = selectedColor.value;
     watchEffect(()=>{
