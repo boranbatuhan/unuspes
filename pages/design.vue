@@ -1,7 +1,6 @@
 <template>
     <div class="min-h-screen font-now">
-        <p class="text-3xl font-bold tracking-widest m-2 select-none">Tasarım Aracı</p>
-        <div class="h-px w-full bg-gradient-to-r from-transparent my-2 via-purple-600 to-transparent"></div>
+        <my-h header="Tasarım Aracı" />
 
         <div class="container mx-auto p-2 flex items-center justify-center flex-col">
             <div class="w-full flex items-center justify-end p-2">

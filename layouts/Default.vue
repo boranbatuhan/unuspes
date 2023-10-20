@@ -12,7 +12,9 @@ const { x, y } = useMouse()
         <beadheader class="hues"/>
 
         <!-- shopnow button start -->
+        <nuxt-link to="/products">
             <my-button-shop :name="'Shop Now'" class="saturate-100 hover:saturate-150 hover:scale-105 scale-100 active:scale-100 transition-all"/>
+        </nuxt-link>
         <!-- shopnow button end -->
 
 
