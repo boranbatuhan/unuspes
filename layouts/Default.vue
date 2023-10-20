@@ -30,7 +30,7 @@ const { x, y } = useMouse()
                             <div class="h-px w-full bg-gradient-to-r from-transparent my-2 via-purple-600 to-transparent"></div>
                             <ul class="px-10">
                                 <li class="hover:underline cursor-pointer underline-offset-2">
-                                    <nuxt-link to="/">Anasayfa</nuxt-link>
+                                    <nuxt-link to="/" >Anasayfa</nuxt-link>
                                 </li>
                                 <li class="hover:underline cursor-pointer underline-offset-2">
                                     <nuxt-link to="/products">Tüm Ürünler</nuxt-link>
@@ -198,7 +198,13 @@ const { x, y } = useMouse()
 
 <style>
 
+.router-link-active {
+    background:
+    linear-gradient( 45deg, #535EFC, #0EC8EE, #0EC8EE);
+    @apply
+    text-transparent  bg-clip-text font-extrabold underline transition-all
 
+}
 
 .hue{
     animation: huec 60s infinite linear alternate;
