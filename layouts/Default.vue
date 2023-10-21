@@ -40,7 +40,10 @@ const { x, y } = useMouse()
                                 <li class="hover:underline cursor-pointer underline-offset-2">
                                     <nuxt-link to="/design">Tasarım Aracı</nuxt-link>
                                 </li>
-                                <li class="hover:underline cursor-pointer underline-offset-2">Seriler</li>
+                                <li class="hover:underline cursor-pointer underline-offset-2">
+                                    <nuxt-link to="/collections">Koleksiyonlar</nuxt-link>
+                                </li>
+
                                 <li class="hover:underline cursor-pointer underline-offset-2">Kargo</li>
                                 <li class="hover:underline cursor-pointer underline-offset-2">Ödeme</li>
                                 <li class="hover:underline cursor-pointer underline-offset-2">Bilgi</li>

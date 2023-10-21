@@ -7,7 +7,7 @@
             <li @click="filter='popi'" :class="{'font-bold underline':filter=='popi'}" class="hover:underline cursor-pointer">Popüler</li>
         </ul>
         <div class="container mx-auto  p-2 flex items-start justify-center flex-wrap gap-10">
-            <my-card v-for="i in 5" :key="i"/>
+            <my-card v-for="p in products" :p="p" :key="p.id"/>
         </div>
     </div>
 </template>
@@ -15,7 +15,7 @@
 <script setup>
 const filter=ref("")
 
-
+const products = useProductsStore().getProducts
 </script>
 
 <style  scoped>

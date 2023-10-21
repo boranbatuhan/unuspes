@@ -1,7 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules:['@vueuse/nuxt', "@nuxtjs/tailwindcss"],
+  modules:[
+    '@vueuse/nuxt', 
+    "@nuxtjs/tailwindcss",
+    '@pinia/nuxt',
+  ],
+  pinia: {
+    storesDirs: ['./store/**', './custom-folder/store/**'],
+  },
   tailwindcss: {
     exposeConfig: true,
   },
