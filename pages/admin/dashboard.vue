@@ -140,7 +140,7 @@ const productimg =(p)=>{
     return p !="noimg" ? p : "https://st4.depositphotos.com/14953852/24787/v/450/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg"
 }
 const checkForm =computed(()=>{
-    return addform.title=="" || addform.series=="" || addform.subSeries=="" || addform.price==0 ? true : false
+    return addform.title=="" || addform.series=="" || addform.subSeries==""  ? true : false
 })
 const resetForm=()=>{
     addform.title=""
