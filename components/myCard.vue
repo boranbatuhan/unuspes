@@ -7,7 +7,7 @@
                 <h1 class="text-xs cursor-pointer opacity-50 hover:opacity-100">{{props.p.subSeries}}</h1>
             </div>
             <!-- card header end -->
-            <div class=" w-full flex items-center justify-end gap-2"> <p class="truncate text-center w-full">{{props.p.title}}</p> <span>#{{props.p.id}}</span></div>
+            <div class=" w-full flex items-center justify-end gap-2"> <p class="truncate text-center w-full">{{props.p.title}}</p> <span>#</span></div>
             <div class="w-48 h-48  graborder-anim my-2 p-px">
                 <img :src="productimg" loading="lazy" alt="product.photo" draggable="false" class="w-full h-full select-none object-contain">
             </div>

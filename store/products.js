@@ -36,14 +36,16 @@ export const useProductsStore = defineStore({
             subSeries:element.subSeries
           })
       });
+
+
       const uniqueItems = new Set();
       subSeries.forEach(item => {
-  const key = JSON.stringify(item);
-  uniqueItems.add(key);
-});
+        const key = JSON.stringify(item);
+        uniqueItems.add(key);
+      });
 
-const uniqueItemsArray = Array.from(uniqueItems);
-const uniqueItemsParsed = uniqueItemsArray.map(item => JSON.parse(item));
+      const uniqueItemsArray = Array.from(uniqueItems);
+      const uniqueItemsParsed = uniqueItemsArray.map(item => JSON.parse(item));
       return uniqueItemsParsed
     },
     getPrices(state){
@@ -69,6 +71,14 @@ const uniqueItemsParsed = uniqueItemsArray.map(item => JSON.parse(item));
       const copiedProduct = { ...newP };
       this.products.push(copiedProduct)
 
-    }
+    },
+    setProductIsLive(item,value){
+      this.products.forEach(element => {
+        return element.id==item.id ? element.isLive=value : element.isLive=element.isLive 
+      });
+    },
+    deleteProductPermanent(item){
+      this.products = this.products.filter(i=>i!=item)
+    },
   },
 });
