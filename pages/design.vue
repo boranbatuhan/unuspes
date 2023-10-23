@@ -1,13 +1,15 @@
 <template>
     <div class="min-h-screen font-now">
         <my-h header="Tasarım Aracı" />
-
         <div class="container mx-auto p-2 flex items-center justify-center flex-col">
             <div class="w-full flex items-center justify-end p-2">
                 <label for="customColor" class="cursor-pointer flex items-center justify-center">
-                    <input type="color" id="customColor" class=" cursor-pointer" v-model="selectedColor">
+                    <input @change="logla($event)" v-model="selectedColor" type="color" id="customColor" class=" cursor-pointer" >
                     <svg :style="`color:${selectedColor}`" class=" scale-100 hover:scale-105 shrink-0 " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12 20a6 6 0 0 1-6-6c0-4 6-10.75 6-10.75S18 10 18 14a6 6 0 0 1-6 6Z"/></svg>
                 </label>
+                <div class="flex items-center flex-row justify-start gap-2 overflow-hidden">
+                    <div @click="selectColor(color)" :class="{'hidden':color=='#FFFFFF'}" v-for="color in colorHistory" :key="color" :style="`background:${color};`" class="w-5 h-5 border shrink-0 border-black rounded-md cursor-pointer hover:scale-105"></div>
+                </div>
                 <button @click="selectColor('#FFFFFF')" class="mr-auto"><svg class="hover:text-sky-400 text-purple-950 scale-100 hover:scale-105 shrink-0 mx-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512"><path fill="currentColor" d="M497.941 273.941c18.745-18.745 18.745-49.137 0-67.882l-160-160c-18.745-18.745-49.136-18.746-67.883 0l-256 256c-18.745 18.745-18.745 49.137 0 67.882l96 96A48.004 48.004 0 0 0 144 480h356c6.627 0 12-5.373 12-12v-40c0-6.627-5.373-12-12-12H355.883l142.058-142.059zm-302.627-62.627l137.373 137.373L265.373 416H150.628l-80-80l124.686-124.686z"/></svg></button>
                 <button v-if="isHorizontal" @click="isHorizontal=false" ><svg class="hover:text-sky-400 text-purple-950 scale-100 hover:scale-105 shrink-0 mx-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g transform="rotate(-90 12 12) translate(24 0) scale(-1 1)"><path fill="currentColor" d="m7 8l-4.5 4L7 16V8m10 0v8l4.5-4L17 8m-5 2a2 2 0 0 0-2 2a2 2 0 0 0 2 2a2 2 0 0 0 2-2a2 2 0 0 0-2-2Z"/></g></svg></button>
                 <button v-if="!isHorizontal" @click="isHorizontal=true" ><svg class="hover:text-sky-400 text-purple-950 scale-100 hover:scale-105 shrink-0 mx-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g transform="rotate(-90 12 12) translate(24 0) scale(-1 1)"><path fill="currentColor" d="M12 2.5L8 7h8l-4-4.5m0 7.5a2 2 0 0 0-2 2a2 2 0 0 0 2 2a2 2 0 0 0 2-2a2 2 0 0 0-2-2m-4 7l4 4.5l4-4.5H8Z"/></g></svg></button>
@@ -19,17 +21,32 @@
                 <canvas id="canvas" width="600" height="180" class="border border-black"></canvas>
             </div>
             <p class="text-xs select-none">*Görüntülenen renkler ile gerçek renk arasında ekranlardan kaynaklı farklılık olabilir.</p>
-            <color-palette :selectColor="selectColor"/>
         </div>
     </div>
 </template>
 
 <script setup>
 const selectedColor = ref("#141414")
+const colorHistory = ref(["#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF"])
+const counter = ref(0)
 const isHorizontal = ref(true)
 const selectColor =(colorcode)=>{
     selectedColor.value=colorcode
 }
+
+const logla=(color)=>{
+    selectColor(color.target.value)
+    if(counter.value >=11)
+    {
+        colorHistory.value[counter.value]=color.target.value
+        counter.value=0
+    }
+    else{
+        colorHistory.value[counter.value]=color.target.value
+        counter.value +=1
+    }
+}
+
 const downloadCanvas =()=> {
     var link = document.createElement('a');
     link.download = 'unuspes_custom_miracle.png';
