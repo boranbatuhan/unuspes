@@ -1,5 +1,5 @@
 <template>
-<div class="min-h-screen flex items-center justify-start flex-col bg-stone-50 font-now">
+<div class="min-h-screen flex items-center justify-start flex-col bg-stone-50 font-now overflow-x-hidden">
     <!-- delete modal start-->
         <div v-if="openDeleteModal" class="w-screen h-screen fixed top-0 left-0 z-[9999] bg-sky-200 flex items-center justify-center">
             <div class="graborder-anim flex items-center gap-4 w-96 flex-col p-4 rounded-lg">
@@ -12,7 +12,7 @@
             </div>
         </div>
     <!-- delete modal end -->
-    <div class="container flex flex-row items-start justify-start flex-wrap mx-auto p-3 ">
+    <div class="container flex flex-row items-end justify-center flex-wrap-reverse mx-auto p-3 ">
 
         <!-- leftCol start -->
         <div class="w-96  flex items-center justify-start flex-col p-7 gap-7 shrink-0">
@@ -57,10 +57,10 @@
 
 
         <!-- rigthCol start -->
-        <div class="w-auto flex items-center justify-start flex-col p-7 gap-7">
+        <div class="w-screen md:w-auto flex items-start justify-start flex-col p-7 gap-7 ">
 
             <!-- product counters start -->
-            <div class="graborder-anim w-full p-3 drop-shadow-lg  rounded-lg justify-between  flex shrink-0">
+            <div class="graborder-anim w-full p-3 drop-shadow-lg  rounded-lg justify-between  flex">
                 <div>
                     <p>Satışa açık ürün : {{productsLive.length}} adet</p>
                     <p>Satışta olmayan ürün : {{productsNotLive.length}} adet</p>
