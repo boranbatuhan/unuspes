@@ -5,12 +5,17 @@ export default defineNuxtConfig({
     '@vueuse/nuxt', 
     "@nuxtjs/tailwindcss",
     '@pinia/nuxt',
+    '@nuxt/image',
+    '@formkit/auto-animate/nuxt'
   ],
   pinia: {
     storesDirs: ['./store/**', './custom-folder/store/**'],
   },
   tailwindcss: {
     exposeConfig: true,
+  },
+  image: {
+    dir: '_nuxt/assets/images/'
   },
   app:{
     head:{

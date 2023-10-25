@@ -76,7 +76,7 @@
 
 
         <!-- products table start -->
-        <div class="max-h-80 drop-shadow-lg graborder rounded-lg overflow-y-scroll w-full overflow-x-auto" style="--turn:0.5">
+        <div  class="max-h-80 drop-shadow-lg graborder rounded-lg overflow-y-scroll w-full overflow-x-auto" style="--turn:0.5">
             <table class="w-full ">
                 <thead class="sticky top-0">
                     <tr class="bg-sky-500 text-end">
@@ -89,11 +89,11 @@
                         <th class="p-2">Operation</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody v-auto-animate class="h-fit">
                     <tr v-for="item in products" :key="item.id" class="bg-sky-200 text-end odd:bg-sky-300 hover:bg-sky-950 hover:text-sky-50" :class="{'saturate-0 opacity-70':!item.isLive}">
                         <td class="p-1"><svg @click="openDelModal(item)" class="hover:text-purple-700 cursor-pointer text-purple-950 scale-100 hover:scale-105 shrink-0 mx-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 12 12"><path fill="currentColor" d="M5 3h2a1 1 0 0 0-2 0ZM4 3a2 2 0 1 1 4 0h2.5a.5.5 0 0 1 0 1h-.441l-.443 5.17A2 2 0 0 1 7.623 11H4.377a2 2 0 0 1-1.993-1.83L1.941 4H1.5a.5.5 0 0 1 0-1H4Zm3.5 3a.5.5 0 0 0-1 0v2a.5.5 0 0 0 1 0V6ZM5 5.5a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5ZM3.38 9.085a1 1 0 0 0 .997.915h3.246a1 1 0 0 0 .996-.915L9.055 4h-6.11l.436 5.085Z"/></svg></td>
                         <td class="p-1 max-w-[8rem] truncate">{{item.title}} {{item.id}}</td>
-                        <td class="p-1"><div class="w-8 h-8"> <img :src="productimg(item.images)" alt="prodcutimg" draggable="false"></div></td>
+                        <td class="p-1"><div class="w-8 h-8"> <img :src="item.images[0]" alt="prodcutimg" draggable="false"></div></td>
                         <td class="p-1 max-w-[8rem] truncate">{{item.series}}</td>
                         <td class="p-1 max-w-[8rem] truncate">{{item.subSeries}}</td>
                         <td class="p-1">{{item.price}}</td>
@@ -149,15 +149,11 @@ const addform=reactive({
     subSeries:"",
     price:100,
     id:0,
-    images:"noimg",
+    images:["https://st4.depositphotos.com/14953852/24787/v/450/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg"],
     isLive:true,
     addTime:Date.now()
 })
 
-
-const productimg =(p)=>{
-    return p !="noimg" ? p : "https://st4.depositphotos.com/14953852/24787/v/450/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg"
-}
 const checkForm =computed(()=>{
     return addform.title=="" || addform.series=="" || addform.subSeries==""  ? true : false
 })
@@ -167,7 +163,7 @@ const resetForm=()=>{
     addform.subSeries=""
     addform.price=100
     addform.id=0
-    addform.images="noimg"
+    addform.images=["https://st4.depositphotos.com/14953852/24787/v/450/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg"]
     addform.isLive=true
 }
 const addProduct=()=>{
