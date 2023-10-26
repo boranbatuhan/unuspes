@@ -70,6 +70,7 @@ export const useProductsStore = defineStore({
     addNewProduct(newP){
       const copiedProduct = { ...newP };
       this.products.push(copiedProduct)
+      console.log('this.products :>> ', this.products);
 
     },
     setProductIsLive(item,value){
