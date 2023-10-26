@@ -19,10 +19,17 @@
 
             <!-- add product start -->
             <div class="graborder-anim drop-shadow-lg p-3 rounded-lg flex items-start justify-center flex-row gap-3 flex-wrap w-full shrink-0">
+                <!-- title start -->
+                
                 <label for="title" class="w-full">
                     Title:
                     <input required v-model="addform.title" type="text" id="title" :class="{'bg-blue-500 border-blue-950 text-blue-100' : addform.title.length >=1 , 'bg-blue-200 border-blue-500 text-blue-950':addform.title.length <=0 }" class="w-full focus:bg-blue-500 focus:border-blue-950 focus:text-blue-100  border-2 px-3 py-px rounded-full uppercase font-bold cursor-pointer ">
                 </label>
+                <!-- title end -->
+
+
+                <!-- series start -->
+
                 <label for="series" class="w-full">
                     Series:
                     <input required type="text" id="series" v-model="addform.series" :class="{'bg-blue-500 border-blue-950 text-blue-100':!series.includes(addform.series)}" class="w-full focus:bg-blue-500 focus:border-blue-950 focus:text-blue-100 bg-blue-200 border-blue-500 text-blue-950 border-2 px-3 py-px rounded-full uppercase font-bold cursor-pointer ">
@@ -30,6 +37,11 @@
                     <div class="w-full max-h-24 flex items-start justify-start gap-3 flex-wrap overflow-y-auto drop-shadow-lg p-2">
                         <div v-for="s in series" :key="s" @click="addform.series=s" :class="{'!bg-blue-500 !border-blue-950 !text-blue-100':addform.series==s,'bg-blue-200 border-blue-500 text-blue-950':addform.series !=s}" class="  border-2 px-3 py-px rounded-full uppercase font-bold cursor-pointer hover:scale-105">{{s}}</div>
                     </div>
+
+                <!-- series end -->
+
+                <!-- subseries start -->
+
                 <label for="subSeries" class="w-full">
                     SubSeries:
                     <input required type="text" id="subSeries" spellcheck="off" autocomplete="off" v-model="addform.subSeries" :class="{'bg-blue-500 border-blue-950 text-blue-100':!subSeries.includes(addform.subSeries)}" class="w-full focus:bg-blue-500 focus:border-blue-950 focus:text-blue-100 bg-blue-200 border-blue-500 text-blue-950 border-2 px-3 py-px rounded-full uppercase font-bold cursor-pointer ">
@@ -37,15 +49,21 @@
                 <div class="w-full max-h-24 flex items-start justify-start gap-3 flex-wrap overflow-y-auto drop-shadow-lg p-2">
                     <div v-for="s in subSeries" :key="s" @click="addform.subSeries=s.subSeries" :class="{'!bg-blue-500 !border-blue-950 !text-blue-100':addform.subSeries==s.subSeries,'bg-blue-200 border-blue-500 text-blue-950':addform.subSeries !=s.SubSeries,'pointer-events-none saturate-0':s.series !=addform.series,'pointer-events-auto saturate-100':s.series ==addform.series}" class="  border-2 px-3 py-px rounded-full uppercase font-bold cursor-pointer hover:scale-105">{{s.subSeries}}</div>
                 </div>
+
+                <!-- subseries end -->
+
+                <!-- prices start -->
                 <label for="price" class="w-full">
                     price:
                     <input required type="number" @keydown.e.prevent id="price" v-model="addform.price" :class="{'bg-blue-500 border-blue-950 text-blue-100':!series.includes(addform.price)}" class="w-full focus:bg-blue-500 focus:border-blue-950 focus:text-blue-100 bg-blue-200 border-blue-500 text-blue-950 border-2 px-3 py-px rounded-full uppercase font-bold cursor-pointer ">
                 </label>
-                    <div class="w-full max-h-24 flex items-start justify-start gap-3 flex-wrap overflow-y-auto drop-shadow-lg p-2">
-                        <div v-for="p in prices" :key="p" @click="addform.price=p" :class="{'!bg-blue-500 !border-blue-950 !text-blue-100':addform.price==p,'bg-blue-200 border-blue-500 text-blue-950':addform.price !=p}" class="  border-2 px-3 py-px rounded-full uppercase font-bold cursor-pointer hover:scale-105">{{p}}</div>
-                    </div>
-                    <!-- photos start -->
-                    <div  class="text-start w-full min-h-[6rem]">
+                <div class="w-full max-h-24 flex items-start justify-start gap-3 flex-wrap overflow-y-auto drop-shadow-lg p-2">
+                <div v-for="p in prices" :key="p" @click="addform.price=p" :class="{'!bg-blue-500 !border-blue-950 !text-blue-100':addform.price==p,'bg-blue-200 border-blue-500 text-blue-950':addform.price !=p}" class="  border-2 px-3 py-px rounded-full uppercase font-bold cursor-pointer hover:scale-105">{{p}}</div>
+                <!-- prices end -->
+                
+            </div>
+                <!-- photos start -->
+                <div  class="text-start w-full min-h-[6rem]">
                         photos:
                         <div class="photos flex items-center justify-start gap-2">
                             <div class="w-16 h-16 rounded-lg border-2 border-purple-950 overflow-hidden relative" v-for="i in tempPhotos" :key="i">
@@ -62,8 +80,8 @@
                         </label>
                     </div>
                 </div>
-                    <!-- photos end -->
-                    <input :disabled="checkForm" @click="addProduct" type="submit" value="Kaydet" id="submit" class="text-center cursor-pointer w-full disabled:pointer-events-none disabled:saturate-0 bg-gradient-to-t from-sky-400 via-sky-600 to-sky-400 hover:to-blue-400 hover:from-blue-400 hover:via-blue-600  py-2 rounded-lg transition-all border-2 border-purple-500/50  font-bold scale-100 hover:scale-105 active:scale-100 text-white px-4">
+                <!-- photos end -->
+                <input :disabled="checkForm" @click="addProduct" type="submit" value="Kaydet" id="submit" class="text-center cursor-pointer w-full disabled:pointer-events-none disabled:saturate-0 bg-gradient-to-t from-sky-400 via-sky-600 to-sky-400 hover:to-blue-400 hover:from-blue-400 hover:via-blue-600  py-2 rounded-lg transition-all border-2 border-purple-500/50  font-bold scale-100 hover:scale-105 active:scale-100 text-white px-4">
 
             </div>
             <!-- add product end -->
@@ -160,6 +178,7 @@ const prices = computed(()=>{
     return useProductsStore().getPrices
 })
 
+// add Form 
 const addform=reactive({
     title:"",
     series:"",
@@ -172,9 +191,11 @@ const addform=reactive({
     addTime:Date.now()
 })
 
+// form check for button 
 const checkForm =computed(()=>{
     return addform.title=="" || addform.series=="" || addform.subSeries=="" || tempPhotos.value.length<=0  ? true : false
 })
+// form reset 
 const resetForm=()=>{
     addform.title=""
     addform.series=""
@@ -184,6 +205,8 @@ const resetForm=()=>{
     addform.images=["https://st4.depositphotos.com/14953852/24787/v/450/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg"]
     addform.isLive=true
 }
+
+// add Form to store
 const addProduct=()=>{
     addform.id=products.value.length
     addform.images=tempPhotos.value
@@ -191,30 +214,34 @@ const addProduct=()=>{
     resetForm()
 }
 
+// set product on off 
 const setIsLive=(item,bool)=>{
     store.setProductIsLive(item,bool)
 }
 
+// delete modal opener
 const openDelModal=(item)=>{
-    console.log('item :>> ', item);
     delSelectedItem.value=item
     openDeleteModal.value=true
 }
+// cancel and close modal
 const closeDelModal=()=>{
     delSelectedItem.value=""
     openDeleteModal.value=false
 }
+// delete perma in store
 const deletePermanent=()=>{
     console.log('delSelectedItem.value :>> ', delSelectedItem.value);
     store.deleteProductPermanent(delSelectedItem.value)
     openDeleteModal.value=false
 }
 
-
+// upload photos
 const uploadPhotos =(event)=>{
     const photoLink = URL.createObjectURL(event.target.files[0])
     tempPhotos.value.push(photoLink);   
 }
+//delete photos
 const deletePhoto =(photo)=>{
     tempPhotos.value=tempPhotos.value.filter( i => i != photo)
 }
