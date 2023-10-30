@@ -135,6 +135,23 @@ const { x, y } = useMouse()
                 </div>
                 <!-- login area end -->
 
+                <!-- profile mini area start -->
+                <div class="h-fit w-full graborder transition-all rounded-lg py-4" style="--turn:0.25">
+                    <p class="text-2xl font-bold pl-6 ">Hoşgeldin</p>
+                    <div class="h-px w-full bg-gradient-to-r from-transparent my-2 via-purple-600 to-transparent"></div>
+                    <ul class="p-2 px-5">
+                        <li class=" my-2">
+                            <p>Batuhan B.</p>
+                        </li>              
+                        <li class=" text-xs  text-sky-600 w-full text-end flex items-center justify-between" >
+                            <nuxt-link to="/profile">
+                            <button class="hover:underline cursor-pointer ">Profile Git</button>
+                            </nuxt-link>
+                            <button class="hover:underline cursor-pointer ">Çıkış Yap</button>
+                        </li>
+                    </ul>
+                </div>
+                <!-- profile mini area end -->
 
 
                 <!-- cart  start -->
